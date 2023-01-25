@@ -40,12 +40,23 @@ random.shuffle(wardeck)
 # Deal Cards
 handplayer = wardeck[0:26]
 handcomputer = wardeck[26:52]
-# print(handcomputer)
 
-# print(handplayer)
-print(handplayer[0])
-print(handcomputer[0])
-if (handplayer[0] > handcomputer[0]):
-    print('The winner is', handplayer[0])
-else : print('The winner is', handcomputer[0])
-print(wardeck)
+#Compare Cards
+count1 = 0;
+count2 = 0;
+playerwinmessage = "Player wins with a score of "
+computerwinmessage = "Computer wins with a score of "
+strmessage = " versus "
+
+for i, j in zip(handplayer,handcomputer):
+    if i > j:
+        count1 += 1
+    elif i < j:
+        count2 += 1
+
+if (count1 > count2):
+    print(playerwinmessage + str(count1) + strmessage + str(count2))
+else:
+    print(computerwinmessage + str(count1) + strmessage + str(count1))
+
+
