@@ -49,14 +49,16 @@ computerwinmessage = "Computer wins with a score of "
 strmessage = " versus "
 
 for i, j in zip(handplayer,handcomputer):
+    print(f"\nPlayer: {str(i[0])} {str(i[1])} \nComputer: {str(j[0])} {str(j[1])}")
     if i > j:
         count1 += 1
+        print("Player wins")
     elif i < j:
         count2 += 1
+        print("Computer wins")
 
 if (count1 > count2):
     print(playerwinmessage + str(count1) + strmessage + str(count2))
 else:
     print(computerwinmessage + str(count1) + strmessage + str(count1))
-
 
